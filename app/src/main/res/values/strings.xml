@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FinalGithubApps</string>
+
+    <string name="copyright">Made by Daffa Radifanka</string>
+    <string name="desc_img_logo">Description Image Logo</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="seach_hint">Search</string>
+    <string name="username">username</string>
+    <string name="detail_user_name">Detail User Name</string>
+    <string name="detail_username">Detail Username</string>
+    <string name="detail_company">Detail Company</string>
+    <string name="detail_location">Detail Location</string>
+    <string name="detail_repository">Detail Repository</string>
+    <string name="detail_followers">Detail Followers</string>
+    <string name="detail_following">Detail Following</string>
+    <string name="token">01978fda0f4e1604f2d423e01bf0afd7311ec000</string>
+
+    <string name="following">%1$s Following</string>
+    <string name="followers">%1$s Followers</string>
+    <string name="tab_following">Following</string>
+    <string name="tab_followers">Followers</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favorite">Favorite</string>
+    <string name="favorite_user">Favorite User</string>
+
+    <string name="key_reminder">reminder</string>
+</resources>
