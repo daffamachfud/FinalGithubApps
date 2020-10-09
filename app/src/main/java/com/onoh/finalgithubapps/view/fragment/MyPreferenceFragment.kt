@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import com.onoh.finalgithubapps.R
+import com.onoh.finalgithubapps.receiver.AlarmReceiver
 
 
 class MyPreferenceFragment : PreferenceFragmentCompat(),
@@ -13,6 +14,7 @@ class MyPreferenceFragment : PreferenceFragmentCompat(),
 
     private lateinit var REMINDER : String
     private lateinit var isReminderPref : SwitchPreference
+    private lateinit var alarmReceiver: AlarmReceiver
 
     companion object {
         private const val DEFAULT_VALUE = "Tidak Ada"
@@ -22,6 +24,7 @@ class MyPreferenceFragment : PreferenceFragmentCompat(),
         addPreferencesFromResource(R.xml.preferences)
         init()
         setSummaries()
+        alarmReceiver = AlarmReceiver()
     }
 
     private fun setSummaries() {
@@ -48,7 +51,12 @@ class MyPreferenceFragment : PreferenceFragmentCompat(),
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
         if(key == REMINDER){
             isReminderPref.disableDependentsState = sharedPreferences.getBoolean(REMINDER,false)
-            Toast.makeText(context,"TES",Toast.LENGTH_LONG).show()
+            val reminder = sharedPreferences.getBoolean(REMINDER,false)
+            if(reminder){
+                alarmReceiver.setRepeatingAlarm(context)
+            }else{
+                alarmReceiver.cancelAlarm(context)
+            }
         }
     }
 }
